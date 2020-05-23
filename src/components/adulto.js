@@ -1,20 +1,19 @@
 import React, { useContext } from 'react';
 import { Context } from '../store/appContext';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 const Adulto = props => {
+    const history = useHistory();
 
     return (
         <>
-        <br/>
-<h1 class="text-center">Adulto</h1>
+            <br />
+            <h1 class="text-center">Adulto</h1>
+            <button className="btn btn-primary" onClick={() => history.goBack()}>Volver</button>
 
-{/* <h2 class="ml-5">Elige el grupo etareo</h2>
+            <Link to={"/adulto/erc"} type="button" class="btn btn-primary">ERC</Link>
 
-<Link to={"/pediatria"} type="button" class="btn btn-primary">Pediatría</Link>
-<Link to={"/adulto"} type="button" class="btn btn-primary">Adulto</Link>
-<Link to={"/adultoMayor"} type="button" className="btn btn-primary">Adulto Mayor</Link> */}
         </>
     )
 }
